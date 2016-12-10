@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GameStoreModelService</name>
+    </assembly>
+    <members>
+        <member name="M:GameStoreModelService.IGameStoreService.Games">
+            <summary>
+            Metoda zwracająca dane gier zaimplementowana w serwisie
+            </summary>
+        </member>
+        <member name="M:GameStoreModelService.IGameStoreService.SaveGame(GameStoreModelService.Game)">
+            <summary>
+             Metoda implementująca dodawanie gier z bazy danych zaimplementowana w serwisie
+            </summary>
+            <param name="game"></param>
+        </member>
+        <member name="M:GameStoreModelService.IGameStoreService.DeleteGame(System.Int32)">
+            <summary>
+            Metoda implementująca usuwanie gier z bazy danych zaimplementowana w serwisie
+            </summary>
+            <param name="gameID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GameStoreModelService.IGameStoreService.ShippingInformations">
+            <summary>
+            Metoda zwracająca dane zamówień zaimplementowana w serwisie
+            </summary>
+        </member>
+        <member name="M:GameStoreModelService.IGameStoreService.SaveShippingInformation(GameStoreModelService.ShippingInformation)">
+            <summary>
+            Metoda implementująca dodanie zamówień do bazy danych zaimplementowana w serwisie
+            </summary>
+            <param name="shippingInformation"></param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:GameStoreModelService.IGameStoreService.DeleteShippingInfo(System.Int32)" -->
+        <member name="M:GameStoreModelService.IGameStoreService.Logins">
+            <summary>
+            Metoda zwracająca dane wszystkich administratorów strony internetowej
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

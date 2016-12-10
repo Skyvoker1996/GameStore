@@ -1,0 +1,254 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GameStore</name>
+    </assembly>
+    <members>
+        <member name="T:GameStore.Abstract.IAuthProvider">
+            <summary>
+            Interfejs który przechowuje metode autoryzacji
+            </summary>
+        </member>
+        <member name="M:GameStore.Abstract.IAuthProvider.Authenticate(System.String,System.String)">
+            <summary>
+            Metoda autoryzuje użytkownika
+            </summary>
+            <param name="username"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GameStore.Abstract.IGameRepository">
+            <summary>
+             Interfejs zawierający zmienne i metody dla zarządzania grami 
+            </summary>
+        </member>
+        <member name="P:GameStore.Abstract.IGameRepository.Games">
+            <summary>
+            Enumerator zawierający gry
+            </summary>
+        </member>
+        <member name="M:GameStore.Abstract.IGameRepository.SaveGame(GameStore.DBModel.Game)">
+            <summary>
+            Metoda która dodaje gre
+            </summary>
+            <param name="game"></param>
+        </member>
+        <member name="M:GameStore.Abstract.IGameRepository.DeleteGame(System.Int32)">
+            <summary>
+            Metoda usuwająca gre
+            </summary>
+            <param name="gameID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GameStore.Abstract.IShippingRepository">
+            <summary>
+             Interfejs zawierający zmienne i metody do zarządzania zamówieniami
+            </summary>
+        </member>
+        <member name="P:GameStore.Abstract.IShippingRepository.ShippingInformations">
+            <summary>
+            Enumerator zawierający zamówienia
+            </summary>
+        </member>
+        <member name="M:GameStore.Abstract.IShippingRepository.SaveShippingInformation(GameStore.DBModel.ShippingInformation)">
+            <summary>
+            Metoda która dodaje zamówienia
+            </summary>
+            <param name="shippingInformation"></param>
+        </member>
+        <member name="M:GameStore.Abstract.IShippingRepository.DeleteShippingInfo(System.Int32)">
+            <summary>
+             Metoda usuwająca zamówienia
+            </summary>
+            <param name="shippingInfoID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GameStore.App_Start.NinjectWebCommon.Start">
+            <summary>
+            Starts the application
+            </summary>
+        </member>
+        <member name="M:GameStore.App_Start.NinjectWebCommon.Stop">
+            <summary>
+            Stops the application.
+            </summary>
+        </member>
+        <member name="M:GameStore.App_Start.NinjectWebCommon.CreateKernel">
+            <summary>
+            Creates the kernel that will manage your application.
+            </summary>
+            <returns>The created kernel.</returns>
+        </member>
+        <member name="M:GameStore.App_Start.NinjectWebCommon.RegisterServices(Ninject.IKernel)">
+            <summary>
+            Load your modules or register your services here!
+            </summary>
+            <param name="kernel">The kernel.</param>
+        </member>
+        <member name="T:GameStore.Infrastructure.CartModelBinder">
+            <summary>
+            Klasa która pomaga przechowywać dane w klasie Kart w okresie sesji używania strony internetowej
+            </summary>
+        </member>
+        <member name="T:GameStore.Infrastructure.NinjectDependencyResolver">
+            <summary>
+            Klasa implementuje intefejs IDependencyResolver, który pomaga powiązać deklarację metod w interfejsie z jego implementacją i usunąć powiązanie pomiędzy nim
+            </summary>
+        </member>
+        <member name="T:GameStore.Models.Cart">
+            <summary>
+            Klasa przedstawiajaca listę zamówień 
+            </summary>
+        </member>
+        <member name="F:GameStore.Models.Cart.CartLine">
+            <summary>
+             Lista przedstawiajaca listę pozycji zmówienia
+            </summary>
+        </member>
+        <member name="M:GameStore.Models.Cart.AddItem(GameStore.DBModel.Game,System.Int32)">
+            <summary>
+            Metoda która dodaje grę do listy zamówienia
+            </summary>
+            <param name="game"></param>
+            <param name="amount"></param>
+        </member>
+        <member name="M:GameStore.Models.Cart.RemoveItem(GameStore.DBModel.Game)">
+            <summary>
+            Metoda która usuwa grę z listy zamówienia
+            </summary>
+            <param name="game"></param>
+        </member>
+        <member name="M:GameStore.Models.Cart.RemoveItem(GameStore.DBModel.Game,System.Int32)">
+            <summary>
+            Metoda która usuwa podaną przez użytkownika ilość gier o tej samej nazwie z listy zamówienia
+            </summary>
+            <param name="game"></param>
+            <param name="amount"></param>
+        </member>
+        <member name="M:GameStore.Models.Cart.RemoveAllItems">
+            <summary>
+            Metoda która usuwa wszystko z listy zamówień
+            </summary>
+        </member>
+        <member name="P:GameStore.Models.Cart.CartList">
+            <summary>
+            Metoda zwracająca listę gier w zamówieniu
+            </summary>
+        </member>
+        <member name="M:GameStore.Models.Cart.TotalPrice">
+            <summary>
+            Metoda która oblicza cenę całego zamówienia  
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:GameStore.Models.CartQueue">
+            <summary>
+            Klasa reprezentuje jedną pozycję w liście zamówienia 
+            </summary>
+        </member>
+        <member name="P:GameStore.Models.CartQueue.Game">
+            <summary>
+            Dane gry 
+            </summary>
+        </member>
+        <member name="P:GameStore.Models.CartQueue.Amount">
+            <summary>
+            Ilość gier o jednej nazwie
+            </summary>
+        </member>
+        <member name="T:GameStore.Models.FormsAuthProvider">
+            <summary>
+            Klasa implementująca interfejs IAuthProvider 
+            </summary>
+        </member>
+        <member name="M:GameStore.Models.FormsAuthProvider.Authenticate(System.String,System.String)">
+            <summary>
+            Implementacja metody Authenticate która pozwala użytkownikowi mieć dostęp do administrowania strony internetowej 
+            </summary>
+            <param name="username"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GameStore.Models.GameFiltering">
+            <summary>
+            Klasa zawierająca dane dla filtrowania gier 
+            </summary>
+        </member>
+        <member name="T:GameStore.Models.GameRepository">
+            <summary>
+             Klasa implementująca interfejs IGameRepository
+            </summary>
+        </member>
+        <member name="P:GameStore.Models.GameRepository.Games">
+            <summary>
+            Metoda zwracająca dane gier
+            </summary>
+        </member>
+        <member name="M:GameStore.Models.GameRepository.DeleteGame(System.Int32)">
+            <summary>
+            Metoda implementująca usuwanie gier z bazy danych
+            </summary>
+            <param name="gameID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GameStore.Models.GameRepository.SaveGame(GameStore.DBModel.Game)">
+            <summary>
+             Metoda implementująca dodawanie gier z bazy danych
+            </summary>
+            <param name="game"></param>
+        </member>
+        <member name="T:GameStore.Models.ModelForCart">
+            <summary>
+            Klasa przedstawiająca model dla kontrolera CartController
+            </summary>
+        </member>
+        <member name="P:GameStore.Models.ModelForCart.ReturnUrl">
+            <summary>
+            Link powrotu do poprzedniego widoku 
+            </summary>
+        </member>
+        <member name="T:GameStore.Models.ShippingInformationModefied">
+            <summary>
+            Klasa przedstawia wszystko to samo co i ShippingInformation, jedynie że właściwość zawierająca Listę zamówionych gier jest nie klasą Cart, a tekstem
+            </summary>
+        </member>
+        <member name="T:GameStore.Models.ShippingInformationRepository">
+            <summary>
+            Klasa implementująca interfejs IShippingRepository 
+            </summary>
+        </member>
+        <member name="P:GameStore.Models.ShippingInformationRepository.ShippingInformations">
+            <summary>
+            Metoda zwracająca dane zamówień
+            </summary>
+        </member>
+        <member name="M:GameStore.Models.ShippingInformationRepository.SaveShippingInformation(GameStore.DBModel.ShippingInformation)">
+            <summary>
+            Metoda implementująca dodanie zamówień do bazy danych
+            </summary>
+            <param name="shippingInformation"></param>
+        </member>
+        <member name="M:GameStore.Models.ShippingInformationRepository.DeleteShippingInfo(System.Int32)">
+            <summary>
+            Metoda implementująca usuwanie zamówień z bazy danych
+            </summary>
+            <param name="shippingInfoID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GameStore.Validation.FluentValidationErrorToStateModelError">
+            <summary>
+            Klasa która konwertuje błędy otrzymane przez FluentValidation w błędy typu ModelState dla poprawnej pracy Html.Helper ValidationSummary
+            </summary>
+        </member>
+        <member name="T:GameStore.Validation.GameValidator">
+            <summary>
+            Walidator dla tabeli Game, dodane reguł walidacji
+            </summary>
+        </member>
+        <member name="T:GameStore.Validation.ShippingInformationValidator">
+            <summary>
+            Walidator dla tabeli ShippingInformation, dodane reguł walidacji
+            </summary>
+        </member>
+    </members>
+</doc>

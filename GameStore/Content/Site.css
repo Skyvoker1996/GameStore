@@ -1,0 +1,367 @@
+﻿
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+.button {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #44c767), color-stop(1, #5cbf2a));
+	background:-moz-linear-gradient(top, #44c767 5%, #5cbf2a 100%);
+	background:-webkit-linear-gradient(top, #44c767 5%, #5cbf2a 100%);
+	background:-o-linear-gradient(top, #44c767 5%, #5cbf2a 100%);
+	background:-ms-linear-gradient(top, #44c767 5%, #5cbf2a 100%);
+	background:linear-gradient(to bottom, #44c767 5%, #5cbf2a 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#44c767', endColorstr='#5cbf2a',GradientType=0);
+	background-color:#44c767;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:28px;
+	font-weight:bold;
+	padding:32px 67px;
+	text-decoration:none;
+}
+.button:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #5cbf2a), color-stop(1, #44c767));
+	background:-moz-linear-gradient(top, #5cbf2a 5%, #44c767 100%);
+	background:-webkit-linear-gradient(top, #5cbf2a 5%, #44c767 100%);
+	background:-o-linear-gradient(top, #5cbf2a 5%, #44c767 100%);
+	background:-ms-linear-gradient(top, #5cbf2a 5%, #44c767 100%);
+	background:linear-gradient(to bottom, #5cbf2a 5%, #44c767 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5cbf2a', endColorstr='#44c767',GradientType=0);
+	background-color:#5cbf2a;
+}
+.button:active {
+	position:relative;
+	top:1px;
+}
+
+.text-center{
+ position: absolute;
+  top: 50%;
+  width: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.text-center a.ps{
+    background-color: #0d488b;
+    background-image: url("Images/ps-logo.png");
+    background-position: 50% 50%;
+    max-width: 300px;
+        width: 100%;
+        height: 300px;
+        display: inline-block;
+        margin: 0 20px;
+        opacity: 0.75;
+        background-size: 100%;
+background-repeat: no-repeat;
+        -moz-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+}
+
+.text-center a.xb{
+    background-color:#77d40c ;
+    background-image: url("Images/xbox-logo.png");
+    background-position: 50% 50%;
+    max-width: 300px;
+        width: 100%;
+        height: 300px;
+        display: inline-block;
+        margin: 0 20px;
+        opacity: 0.75;
+        background-size: 100%;
+background-repeat: no-repeat;
+        -moz-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+    background-position: 50% 50%;
+}
+
+.text-center a.pc{
+    background-color: #292727;
+    background-image: url("Images/pc-logo.png");
+    background-position: 50% 50%;
+    max-width: 300px;
+        width: 100%;
+        height: 300px;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        display: inline-block;
+        margin: 0 20px;
+        opacity: 0.75;
+        -moz-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+            background-size: 60%;
+}
+
+.text-center a:hover{
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.col-xs-8 .well{
+    width: 250px;
+    display: inline-block;
+    height: 410px;
+    overflow: hidden;
+    vertical-align: top;
+    margin: 10px;
+    position: relative;
+    background: #fff;
+    border: 1px solid #636873;
+}
+
+.col-xs-8 .well .pull-left{
+    display: block;
+    width: 100%;
+    float: none !important;
+}
+
+.col-xs-8 .well form{
+    vertical-align: top;
+    display: inline-block;
+}
+
+.col-xs-8 .well .label-primary{
+    background: none;
+    color: #000;
+}
+
+.col-xs-8 .well h3 {
+    margin-top: 5px;
+    text-align: left;
+}
+
+.pull-right{
+    display: block;
+    float: none !important;
+    margin: 5px auto;
+
+}
+
+.img-thumbnail{
+    width: 100%;
+}
+
+.lead{
+    display: none;
+}
+
+span.pull-right.label.label-primary{
+    text-align: left;
+    padding-left: 0;
+}
+
+.col-xs-8 .well form .btn{
+    width: 100px;
+}
+
+.row{
+    margin:0 !important;
+}
+
+.button-menu{
+    background: #fff;
+    height: 60px;
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+.button-menu a{
+    display: inline-block;
+    width:33%;
+    border-radius: 0;
+    height: 100%;
+    background-size: 10%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.navbar.navbar-inverse{
+    height: 110px;
+}
+
+.button-menu a{
+    border: none;
+    opacity: 0.75;
+        -moz-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+}
+
+.button-menu a:hover {
+    opacity: 1;
+}
+
+.button-menu a.first{
+    background-color:#0d488b ;
+    background-image: url("Images/ps-name.png");
+    background-size:26%;
+}
+
+.button-menu a.second{
+    background-color:#77d40c ;
+    background-image: url("Images/xbox-name.png");
+    background-size:30%;
+}
+
+.button-menu a.third{
+    background-color:#292727 ;
+    background-image: url("Images/pc-name.png");
+    background-size:12%;
+}
+
+
+a.adm.btn.btn-primary.btn.btn-block.btn-default.btn-lg{
+    background: #77d40c;
+}
+
+.navbar-inverse{
+    background: #fff;
+    border: none;
+}
+
+.navbar-brand{
+    display: none;
+}
+
+.pull-center{
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid #000;
+    margin: 20px;
+    max-width: 750px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.table thead > tr > th,
+.table tbody > tr > td{
+  border: none;
+}
+
+.text-center.complete{
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: none;
+}
+
+.pull-center .form-group label{
+    width  : 100%;
+}
+
+.pull-center .form-group input{
+    max-width: 500px;
+    display: inline-block;
+}
+.text-center.center{
+    position: relative;
+}
+
+tbody tr td,
+tbody tr td.text-center{
+    position: relative;
+    text-align: left;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: none;
+}
+
+tbody tr td.text-center{
+    width: auto;
+}
+
+th.text-center {
+    position: relative;
+    width: auto;
+    top: auto;
+    transform: none;
+    left: auto;
+}
+
+td.text-center form {
+    text-align: center;
+}
+
+a.btn.btn-primary.btn-block.btn-lg.edit {
+    border-radius: 0;
+    width: 310px;
+    height: 200px;
+    position: relative;
+         background-position: 50% 50%;
+        background-size: 100%;
+        background-repeat: no-repeat;    
+        background-size: 60%;
+}
+
+    a.btn.btn-primary.btn-block.btn-lg.edit:nth-of-type(1) {
+        background-image: url("Images/videogame.png");
+
+    }
+    
+      a.btn.btn-primary.btn-block.btn-lg.edit:nth-of-type(2) {
+        background-image: url("Images/orders.png");
+
+    }
+
+.button-add {
+    position: absolute;
+    bottom: 10px;
+}
+
+.text-center.center a {
+    transform: none;
+}
+
+a.btn.btn-default.navbar-btn.cart {
+  
+    width: 40px;
+    height:35px;
+    background-image: url("Images/cart.png");
+    background-size:80%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat; 
+    position: relative;
+    margin-right: 20px;
+    cursor: pointer;     
+}
+
+.overflow {
+ white-space:nowrap;
+ overflow:hidden;
+ text-overflow:ellipsis;
+ width: 150px;
+display: inline-block;
+}
+
+.pull-center .context{
+ 
+    max-width: 500px;
+    width: 100%;
+    margin:0 auto;
+
+}

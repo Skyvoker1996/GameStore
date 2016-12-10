@@ -1,0 +1,66 @@
+﻿@model GameStore.Models.ModelForCart
+
+@{
+    ViewBag.Title = "Your Cart";
+    Layout = "~/Views/shared/_BasicLayout.cshtml";
+}
+
+<style>
+    #cartTable td {
+    vertical-align: middle;
+    }
+</style>
+<h2>Shopping Cart</h2>
+<table id="cartTable" class="table">
+    <thead>
+        <tr>
+            <th>Quantity</th>
+            <th>Game</th>
+            <th>Platform</th>
+            <th class="text-right">Price</th>
+            <th class="text-right">Subtotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Cart.CartList)
+        {
+            <tr>
+                <td class="text-center">@item.Amount</td>
+                <td class="text-left overflow">@item.Game.Name</td>
+                <td>@item.Game.Platform</td>
+                <td class="text-right">@item.Game.Price.ToString("c")</td>
+                <td class="text-right">
+                    @((item.Amount * item.Game.Price).ToString("c"))
+                </td>
+                <td> 
+                    @using (Html.BeginForm("RemoveFromCart", "Cart"))
+                    {
+                    @Html.Hidden("gameID", item.Game.GameID)
+                    @Html.HiddenFor(x => x.ReturnUrl)
+                    <input class="btn btn-sm btn-warning" type="submit" value="Remove" />
+                    }
+                 </td >
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="4" class="text-right">Total:</td>
+            <td class="text-right">
+                @Model.Cart.TotalPrice().ToString("c")
+            </td>
+        </tr>
+    </tfoot>
+</table>
+
+<div class="text-center center">
+    <a class="btn btn-primary" href="@Model.ReturnUrl">Continue shopping</a>
+    @if (Model.Cart.CartList.Sum(x => x.Amount) == 0)
+    {
+      @Html.ActionLink("Checkout", "Checkout", null, new { @class = "btn btn-primary disabled" })
+    }
+    else
+    {
+    @Html.ActionLink("Checkout", "Checkout", null, new { @class = "btn btn-primary" })
+    }
+</div>

@@ -1,0 +1,40 @@
+﻿@model GameStore.DBModel.ShippingInformation
+
+@{
+    ViewBag.Title = "Checkout";
+    Layout = "~/Views/shared/_BasicLayout.cshtml";
+}
+<div class="context">
+    <h2>Please enter your shipping information</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary()
+        <h3>Your Address</h3>
+        <b></b>
+        <div class="form-group">
+            <label>Full Name:</label>
+            @Html.TextBoxFor(x => x.FullName, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Street and House/Apatrment:</label>
+            @Html.TextBoxFor(x => x.StreetAndHouse, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>City or Village:</label>
+            @Html.TextBoxFor(x => x.City, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Country:</label>
+            @Html.TextBoxFor(x => x.Country, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Zip:</label>
+            @Html.TextBoxFor(x => x.Zip, new { @class = "form-control" })
+        </div>
+
+        <div class="text-center complete">
+            <input class="btn btn-primary complete" type="submit" value="Complete Order" />
+        </div>
+    }
+</div>

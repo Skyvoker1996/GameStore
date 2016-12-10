@@ -1,0 +1,56 @@
+﻿@model GameStore.DBModel.Game
+
+@{
+    ViewBag.Title = "Edit " + @Model.Name;
+    Layout = "~/Views/shared/_AdminLayout.cshtml";
+}
+
+<div class="panel">
+    <div class="panel-heading">
+        <h3>Edit @Model.Name</h3>
+    </div>
+
+        @using (Html.BeginForm("Edit", "Admin", FormMethod.Post))
+        {
+            @Html.ValidationSummary()
+          <div class="panel-body">
+           @Html.HiddenFor(m => m.GameID)
+          @foreach (var property in ViewData.ModelMetadata.Properties)
+          {
+                switch (property.PropertyName)
+                {
+                    case "GameID":
+                    case "ExtensionData":
+                        break;
+                    default:
+                        <div class="form-group">
+                            <label>@(property.DisplayName ?? property.PropertyName)</label>
+                            @if (property.PropertyName == "Description")
+                            {
+                                @Html.TextArea(property.PropertyName, null,
+                                 new { @class = "form-control", rows = 5 })
+                            }
+                            else if (property.PropertyName == "Platform")
+                            {
+                                List<SelectListItem> list = new List<SelectListItem> {
+                                    new SelectListItem { Text = "PlayStation" },
+                                    new SelectListItem { Text = "Xbox"},
+                                    new SelectListItem { Text = "PC" } };
+                                @Html.DropDownList(property.PropertyName, list, null , new { @class = "form-control" })
+                            }
+                            else
+                            {
+                                @Html.TextBox(property.PropertyName, null, new { @class = "form-control" })
+                            }
+                        </div>
+                        break;
+                  }
+           }
+            </div>
+
+            <div class="panel-footer">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                @Html.ActionLink("Cancel and return to List", "Index", null, new { @class = "btn btn-default"})
+            </div>
+        }
+</div>

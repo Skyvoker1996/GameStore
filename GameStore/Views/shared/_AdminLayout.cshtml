@@ -1,0 +1,38 @@
+﻿@{
+    Layout = null;
+ }
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/ErrorStyles.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <title></title>
+</head>
+<body>
+    <div class="navbar navbar-inverse" role="navigation">
+        <span>
+            <a class="navbar-brand" href="#">Game Store</a>
+            @Html.Action("Widget","Cart")
+            <div class="button-menu">
+                @Html.ActionLink(" ", "Index", "Home", new { platform = "PlayStation" }, new { @class = "btn btn-primary first" })
+                @Html.ActionLink(" ", "Index", "Home", new { platform = "Xbox" }, new { @class = "btn btn-primary second" })
+                @Html.ActionLink(" ", "Index", "Home", new { platform = "PC" }, new { @class = "btn btn-primary third" })
+            </div>
+        </span>
+    </div>
+
+    <div id="categories " class="col-xs-3">
+        @Html.ActionLink(" ","Index","Admin", null, new { @class = "btn btn-primary btn-block btn-lg edit" })
+        @Html.ActionLink(" ", "ShippingIndex", "Admin", null, new { @class = "btn btn-primary btn-block btn-lg edit" })
+    </div>
+    <div class="col-xs-8">
+        @if (TempData["message"] != null)
+        {
+            <div class="alert alert-success">@TempData["message"]</div>
+        }
+        @RenderBody()
+    </div>
+</body>
+</html>

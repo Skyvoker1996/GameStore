@@ -1,0 +1,11 @@
+﻿@model GameStore.Models.Cart
+
+<div class="navbar-right"> 
+    @Html.ActionLink(" ", "Cart", "Cart", new { returnUrl = Request.Url.PathAndQuery }, new { @class = "btn btn-default navbar-btn cart" })
+</div>
+
+<div class="navbar-text navbar-right">
+    <b> Your cart:</b>
+    @Model.CartList.Sum(x => x.Amount) item(s),
+    @Model.TotalPrice().ToString("c") 
+</div>
